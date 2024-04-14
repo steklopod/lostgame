@@ -1,0 +1,85 @@
+### BALANCE for gamer 1 (All requests are for 'PlayerOne')
+POST http://localhost:8080/open-api-games/v1/games-processor
+Content-Type: application/json
+Sign: 0bd78275be4ccb549f5c5736f2d5ed7e`
+
+{
+  "api": "balance",
+  "data": {
+    "gameSessionId": "c3eb0de1-65ba-434f-b2aa-8912b76870ae",
+    "currency": "BTC"
+  }
+}
+
+### BALANCE of not existing
+POST http://localhost:8080/open-api-games/v1/games-processor
+Content-Type: application/json
+Sign: 87353008669678c2a3340ac3a6aaf705
+
+{
+  "api": "balance",
+  "data": {
+    "gameSessionId": "c0eb0de1-65ba-434f-b2aa-8912b70000ae",
+    "currency": "BTC"
+  }
+}
+
+### DEBIT
+POST http://localhost:8080/open-api-games/v1/games-processor
+Content-Type: application/json
+Sign: 71a972808b252c0f0895d1f5296bb3f5
+
+{
+  "api": "debit",
+  "data": {
+    "gameSessionId": "c3eb0de1-65ba-434f-b2aa-8912b76870ae",
+    "transactionId": "66cf56af-16e0-4387-8608-c2b4eeef4c00",
+    "amount": 100,
+    "currency": "BTC"
+  }
+}
+
+### CREDIT
+POST http://localhost:8080/open-api-games/v1/games-processor
+Content-Type: application/json
+Sign: bc7d98cbdd1992a5e91b937ac4c550ba
+
+{
+  "api": "credit",
+  "data": {
+    "gameSessionId": "c3eb0de1-65ba-434f-b2aa-8912b76870ae",
+    "transactionId": "77cf56af-16e0-4387-8608-c2b4eeef4c11",
+    "amount": 10,
+    "currency": "BTC"
+  }
+}
+
+### CREDIT error (when not enough money)
+POST http://localhost:8080/open-api-games/v1/games-processor
+Content-Type: application/json
+Sign: e356ea5c4172c84287e140f9709154e7
+
+{
+  "api": "credit",
+  "data": {
+    "gameSessionId": "c3eb0de1-65ba-434f-b2aa-8912b76870ae",
+    "transactionId": "77cf56af-16e0-4387-8608-c2b4eeef4c00",
+    "amount": 10000000,
+    "currency": "BTC"
+  }
+}
+
+### Invalid Sign
+POST http://localhost:8080/open-api-games/v1/games-processor
+Content-Type: application/json
+Sign: e056ea5c4172c84287e140f9709154e7
+
+{
+  "api": "credit",
+  "data": {
+    "gameSessionId": "c3eb0de1-65ba-434f-b2aa-8912b76870ae",
+    "transactionId": "77cf56af-16e0-4387-8608-c2b4eeef4c00",
+    "amount": 10000000,
+    "currency": "BTC"
+  }
+}
