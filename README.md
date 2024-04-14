@@ -1,8 +1,8 @@
-# Getting Started
-
-*Make sure you have `Java 17+` installed.
+# User balance processing [![Test CI](https://github.com/steklopod/lostgame/actions/workflows/test-ci.yml/badge.svg)](https://github.com/steklopod/lostgame/actions/workflows/test-ci.yml)
 
 ## Run 🏎️
+
+*Make sure you have `Java 17+` installed.
 
 ```shell
 ./gradlew bootRun
