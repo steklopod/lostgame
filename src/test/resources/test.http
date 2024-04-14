@@ -1,7 +1,7 @@
 ### BALANCE for gamer 1 (All requests are for 'PlayerOne')
 POST http://localhost:8080/open-api-games/v1/games-processor
 Content-Type: application/json
-Sign: 0bd78275be4ccb549f5c5736f2d5ed7e`
+Sign: 0bd78275be4ccb549f5c5736f2d5ed7e
 
 {
   "api": "balance",

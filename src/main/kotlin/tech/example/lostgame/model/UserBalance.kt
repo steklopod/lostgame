@@ -5,6 +5,7 @@ import jakarta.persistence.CascadeType.ALL
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.OneToMany
+import jakarta.persistence.Version
 import java.util.*
 
 @Entity
@@ -23,4 +24,7 @@ data class UserBalance(
 
     @OneToMany(mappedBy = "userBalance", cascade = [ALL]) @JsonIgnore
     var balanceTransactions: List<BalanceTransaction> =  listOf()
+
+    @Version @JsonIgnore // <-- Prevent concurrent access and provide Locking
+    var lockVersion: Int? = null
 }

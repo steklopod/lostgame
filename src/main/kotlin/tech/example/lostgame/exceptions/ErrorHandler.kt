@@ -2,7 +2,9 @@ package tech.example.lostgame.exceptions
 
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
-import org.springframework.http.HttpStatus.*
+import org.springframework.http.HttpStatus.CONFLICT
+import org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR
+import org.springframework.http.HttpStatus.PAYMENT_REQUIRED
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestControllerAdvice
